@@ -6,6 +6,7 @@
   --buzz-ink: #231e1e;
   --buzz-yellow: #d7d72e;
   --buzz-pink: #f7a8c8;
+  --stick-key: #f718a9; /* sampled from the lit face of the key photo */
   --buzz-lime: #dbfa52;
   --buzz-blue: #d7e7f5;
   --buzz-dot: rgba(35, 30, 30, 0.16);
@@ -905,11 +906,11 @@ html.cursor-none input { cursor: none; }
   top: 0.45em;
   width: 11px;
   height: 6px;
-  border-left: 2px solid var(--buzz-pink);
-  border-bottom: 2px solid var(--buzz-pink);
+  border-left: 2px solid var(--stick-key);
+  border-bottom: 2px solid var(--stick-key);
   transform: rotate(-45deg);
 }
-.pricing-card .pricing-cta { color: var(--buzz-ink); background: var(--buzz-pink); }
+.pricing-card .pricing-cta { color: #0e0b0b; background: var(--stick-key); }
 .pricing-card .pricing-note { color: var(--buzz-blue); opacity: 0.55; }
 
 /* --------------------------------------------------------------------------
