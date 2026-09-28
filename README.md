@@ -17,7 +17,8 @@ Then open <http://localhost:4173>.
 
 The stylesheet and script are linked as `styles.css?v=<hash>` and `app.js?v=<hash>`,
 where the hash is the first 8 characters of the file's MD5. Update it whenever either
-file changes, so browsers fetch the new copy instead of reusing a cached one.
+file changes, so browsers fetch the new copy instead of reusing a cached one. The key
+photo (`stick-key.webp`) is fingerprinted the same way.
 
 ## What's here
 
