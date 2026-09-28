@@ -5,10 +5,11 @@
 :root {
   --buzz-ink: #231e1e;
   --buzz-yellow: #d7d72e;
+  --buzz-pink: #f7a8c8;
   --buzz-lime: #dbfa52;
   --buzz-blue: #d7e7f5;
   --buzz-dot: rgba(35, 30, 30, 0.16);
-  --bg-top: #d7d72e;
+  --bg-top: var(--buzz-pink);
   --font-sans: "Cash Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Inter, Helvetica, Arial, sans-serif;
 }
@@ -18,7 +19,7 @@
 *::after { box-sizing: border-box; }
 
 html {
-  background: var(--buzz-yellow);
+  background: var(--buzz-pink);
   color: var(--buzz-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
