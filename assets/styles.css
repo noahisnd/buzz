@@ -348,16 +348,7 @@ html.cursor-none input { cursor: none; }
   to { opacity: 1; transform: none; }
 }
 
-.hero-developer-preview {
-  margin: 0 0 0 22px;
-  font-size: clamp(10px, 0.85vw, 13px);
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  color: var(--buzz-ink);
-  opacity: 0.72;
-  animation: fade-in 1.4s ease 0.5s both;
-}
-@keyframes fade-in { from { opacity: 0; } to { opacity: 0.72; } }
+ to { opacity: 0.72; } }
 
 .hero-copy {
   max-width: 640px;
@@ -1024,7 +1015,6 @@ html.cursor-none input { cursor: none; }
   .hero-inner { flex-direction: column; align-items: flex-start; padding: 0 8vw; }
   .hero-copy { padding-right: 0; margin-top: 28px; }
   .hero-wordmark { font-size: clamp(96px, 26vw, 260px); margin-left: 0; }
-  .hero-developer-preview { margin-left: 6px; }
   .features-track { --features-track-justify: flex-start; --features-track-padding: 0 6vw; }
 }
 
