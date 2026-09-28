@@ -332,40 +332,32 @@
     });
   });
 
-  /* ----------------------------------------------------- session mock loop */
+  /* ------------------------------------------------ play videos in view */
 
-  var thread = document.querySelector("[data-sequence]");
-  if (thread) {
-    var messages = thread.querySelectorAll(".seq-item");
-    var timers = [];
-    var runThread = function () {
-      timers.forEach(clearTimeout);
-      timers = [];
-      Array.prototype.forEach.call(messages, function (m) { m.classList.remove("is-shown"); });
-      Array.prototype.forEach.call(messages, function (m, i) {
-        timers.push(
-          window.setTimeout(function () { m.classList.add("is-shown"); }, 500 + i * 780)
-        );
-      });
-      timers.push(window.setTimeout(runThread, 500 + messages.length * 780 + 4200));
-    };
-    if ("IntersectionObserver" in window) {
-      var threadObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              runThread();
-              threadObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      threadObserver.observe(thread);
-    } else {
-      runThread();
+  // Muted, looping clips play only while on screen, and never under reduced
+  // motion — there the poster stands in and native controls are offered.
+  Array.prototype.forEach.call(document.querySelectorAll("video[data-autoplay]"), function (video) {
+    if (reduceMotion) {
+      video.controls = true;
+      return;
     }
-  }
+    if (!("IntersectionObserver" in window)) {
+      video.play().catch(function () { /* autoplay refused: poster stays */ });
+      return;
+    }
+    new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            video.play().catch(function () { /* autoplay refused: poster stays */ });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.35 }
+    ).observe(video);
+  });
 
   /* ----------------------------------------------------------- typewriter */
 

@@ -22,6 +22,7 @@ index.html          the page
 assets/styles.css   all styling
 assets/app.js       bees, scroll-driven background, reveals, typewriter
 assets/icon.svg     favicon
+assets/how/         step media: two WebP stills, the step 3 MP4 and its poster
 pages/              faq / refunds / terms / privacy / contact
 ```
 
@@ -38,8 +39,9 @@ pages/              faq / refunds / terms / privacy / contact
   section holds its own color and cross-fades through the middle third of the gap.
 - **Custom cursor** — a `mix-blend-mode: difference` dot that eases toward the pointer.
   Disabled on touch and under `prefers-reduced-motion`.
-- **Animated product mock** — the laptop screen runs a looping CSS/HTML mock of a running
-  session: mode chip, blocked list striking through row by row, and the line about the key.
+- **How it works** — each step carries its own media: the Modes screen, the key in hand,
+  and a screen recording of a session starting. The clip is muted and looping, plays only
+  while on screen, and shows its poster with controls under reduced motion.
 - **Reveal on scroll, an accordion FAQ, and a typewriter footer line.**
 
 Every animation respects `prefers-reduced-motion`.
@@ -47,8 +49,7 @@ Every animation respects `prefers-reduced-motion`.
 ## Notes
 
 Built on a layout originally derived from another site's structure, then rewritten around
-Stick's copy. Type is a system UI stack rather than a licensed webfont, and the product
-shot is an HTML/CSS mock rather than a photograph or screen recording.
+Stick's copy. Type is a system UI stack rather than a licensed webfont.
 
 "Get Stick" links point at getstick.website/buy. The sub-pages under `pages/` are
 placeholders apart from the FAQ, which carries the real answers from the homepage.
