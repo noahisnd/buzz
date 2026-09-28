@@ -243,10 +243,46 @@
     var cy = window.innerHeight / 2;
     var tx = cx;
     var ty = cy;
+    var LINKS = "a, button, summary, input, textarea, select, label, [role='button']";
+    var TEXT = "p, h1, h2, h3, h4, li, blockquote";
+    var darkCache = typeof WeakMap === "function" ? new WeakMap() : null;
+
+    // Is the nearest painted surface behind this element dark? Walks up to the
+    // first ancestor with a mostly opaque background; the page wash itself is
+    // always a light pastel, so running out of ancestors means "light".
+    var onDarkSurface = function (el) {
+      var start = el;
+      if (darkCache && darkCache.has(start)) return darkCache.get(start);
+      var dark = false;
+      for (; el && el !== document.body; el = el.parentElement) {
+        var m = window.getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
+        if (!m || (m.length > 3 && parseFloat(m[3]) < 0.5)) continue;
+        var lin = function (v) {
+          v /= 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        dark = 0.2126 * lin(+m[0]) + 0.7152 * lin(+m[1]) + 0.0722 * lin(+m[2]) < 0.2;
+        break;
+      }
+      if (darkCache) darkCache.set(start, dark);
+      return dark;
+    };
+
+    var lastTarget = null;
+    var restyleCursor = function (target) {
+      if (target === lastTarget || !target || !target.closest) return;
+      lastTarget = target;
+      var link = target.closest(LINKS);
+      cursor.classList.toggle("is-link", !!link);
+      cursor.classList.toggle("is-text", !link && !!target.closest(TEXT));
+      cursor.classList.toggle("on-dark", onDarkSurface(target));
+    };
+
     document.addEventListener("mousemove", function (e) {
       tx = e.clientX;
       ty = e.clientY;
       cursor.style.opacity = "1";
+      restyleCursor(e.target);
     });
     document.addEventListener("mouseleave", function () { cursor.style.opacity = "0"; });
     (function followCursor() {
