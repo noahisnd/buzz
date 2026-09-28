@@ -140,9 +140,14 @@
 
   var SECTION_COLORS = {
     hero: [247, 168, 200],
-    video: [247, 168, 200],
-    features: [215, 231, 245],
-    cta: [219, 250, 82],
+    how: [247, 168, 200],
+    compare: [215, 231, 245],
+    pricing: [219, 250, 82],
+    modes: [219, 250, 82],
+    details: [215, 231, 245],
+    key: [215, 231, 245],
+    platforms: [247, 168, 200],
+    questions: [247, 168, 200],
     footer: [247, 168, 200]
   };
 
@@ -179,7 +184,9 @@
         var b = anchors[i + 1];
         if (center >= a.pos && center <= b.pos) {
           var t = (center - a.pos) / (b.pos - a.pos);
-          t = t * t * (3 - 2 * t); // ease
+          // hold each section's own colour, then cross-fade through the middle
+          t = Math.min(1, Math.max(0, (t - 0.32) / 0.36));
+          t = t * t * (3 - 2 * t);
           color = [
             lerp(a.color[0], b.color[0], t),
             lerp(a.color[1], b.color[1], t),
@@ -290,36 +297,6 @@
     }
   );
 
-  /* --------------------------------------------------------------- menus */
-
-  var openMenu = null;
-
-  function closeMenu() {
-    if (!openMenu) return;
-    openMenu.panel.hidden = true;
-    openMenu.trigger.setAttribute("aria-expanded", "false");
-    openMenu = null;
-  }
-
-  Array.prototype.forEach.call(document.querySelectorAll("[data-menu-trigger]"), function (trigger) {
-    var panel = trigger.parentElement.querySelector(".menu-panel");
-    if (!panel) return;
-    trigger.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var wasOpen = openMenu && openMenu.panel === panel;
-      closeMenu();
-      if (wasOpen) return;
-      panel.hidden = false;
-      trigger.setAttribute("aria-expanded", "true");
-      openMenu = { panel: panel, trigger: trigger };
-    });
-  });
-
-  document.addEventListener("click", closeMenu);
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
-  });
-
   /* ------------------------------------------------------- logo: blink + top */
 
   var logoButton = document.querySelector(".chrome-logo");
@@ -355,11 +332,11 @@
     });
   });
 
-  /* ---------------------------------------------------------- app-mock loop */
+  /* ----------------------------------------------------- session mock loop */
 
-  var thread = document.querySelector("[data-thread]");
+  var thread = document.querySelector("[data-sequence]");
   if (thread) {
-    var messages = thread.querySelectorAll(".app-msg");
+    var messages = thread.querySelectorAll(".seq-item");
     var timers = [];
     var runThread = function () {
       timers.forEach(clearTimeout);
@@ -367,10 +344,10 @@
       Array.prototype.forEach.call(messages, function (m) { m.classList.remove("is-shown"); });
       Array.prototype.forEach.call(messages, function (m, i) {
         timers.push(
-          window.setTimeout(function () { m.classList.add("is-shown"); }, 500 + i * 1150)
+          window.setTimeout(function () { m.classList.add("is-shown"); }, 500 + i * 780)
         );
       });
-      timers.push(window.setTimeout(runThread, 500 + messages.length * 1150 + 3600));
+      timers.push(window.setTimeout(runThread, 500 + messages.length * 780 + 4200));
     };
     if ("IntersectionObserver" in window) {
       var threadObserver = new IntersectionObserver(
@@ -394,7 +371,7 @@
 
   var typeTarget = document.querySelector("[data-typewriter]");
   if (typeTarget) {
-    var PHRASE = "The room is buzzing again";
+    var PHRASE = "The only way out is a walk.";
     if (reduceMotion) {
       typeTarget.textContent = PHRASE;
     } else {
@@ -444,43 +421,4 @@
   window.addEventListener("resize", tuneFuzz);
   window.addEventListener("load", tuneFuzz);
 
-  /* ----------------------------------------------------------------- form */
-
-  var form = document.querySelector(".cta-form");
-  if (form) {
-    var status = form.querySelector(".cta-status");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var email = form.querySelector('input[name="email"]');
-      var name = form.querySelector('input[name="name"]');
-      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-      email.classList.toggle("is-invalid", !valid);
-      if (!valid) {
-        status.textContent = "Enter a valid email address.";
-        email.focus();
-        return;
-      }
-      if (!name.value.trim()) {
-        name.classList.add("is-invalid");
-        status.textContent = "Add your name so we know who to reach.";
-        name.focus();
-        return;
-      }
-      name.classList.remove("is-invalid");
-      try {
-        window.localStorage.setItem(
-          "buzz.waitlist",
-          JSON.stringify({
-            email: email.value.trim(),
-            name: name.value.trim(),
-            company: (form.querySelector('input[name="company"]') || {}).value || "",
-            at: new Date().toISOString()
-          })
-        );
-      } catch (err) { /* storage unavailable */ }
-      form.querySelector(".cta-fields").classList.add("is-sent");
-      status.textContent = "You're on the list — we'll be in touch.";
-      form.reset();
-    });
-  }
 })();

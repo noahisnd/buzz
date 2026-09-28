@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" data-site="buzz" style="--bg-top: rgb(247, 168, 200);">
+<html lang="en" data-site="stick" style="--bg-top: rgb(247, 168, 200);">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buzz — Your people, your agents, your project — all in one place.</title>
+  <title>Stick | Put the off switch in another room</title>
   <link rel="icon" href="assets/icon.svg">
-  <meta name="description" content="Come test the early stages with us.">
+  <meta name="description" content="Stick is a USB key that blocks the sites and apps you choose, on Mac and Windows. Ending a session means physically going to get it.">
   <meta name="theme-color" content="#f7a8c8">
-  <meta property="og:title" content="Buzz — Your people, your agents, your project — all in one place.">
-  <meta property="og:description" content="Come test the early stages with us.">
+  <meta property="og:title" content="Stick | Put the off switch in another room">
+  <meta property="og:description" content="Stick is a USB key that blocks the sites and apps you choose, on Mac and Windows. Ending a session means physically going to get it.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <!-- background + overlays -->
   <div class="bg-wash" aria-hidden="true"></div>
   <div class="bg-dots" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- chrome: back to top -->
   <button class="chrome-logo hover-fade" type="button" aria-label="Back to top">
     <svg class="chrome-bee-logo" viewBox="0 0 466 309" width="44" height="29" aria-hidden="true" focusable="false">
       <defs>
@@ -42,7 +40,6 @@
     </svg>
   </button>
 
-  <!-- chrome: top right -->
   <div class="chrome-right">
     <a class="buzz-pill chrome-social" href="https://www.instagram.com/stick.ig/" target="_blank" rel="noreferrer" aria-label="Open the stick Instagram profile">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true" focusable="false">
@@ -51,31 +48,14 @@
         <circle cx="17.3" cy="6.8" r="1.35" fill="currentColor"></circle>
       </svg>
     </a>
-    <div class="menu-wrap">
-      <button type="button" class="chrome-download buzz-pill" aria-haspopup="menu" aria-expanded="false" data-menu-trigger>
-        Get the app
-        <svg class="menu-chevron" viewBox="0 0 12 12" width="9" height="9" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M6 9.4 1 3.8a.8.8 0 0 1 1.2-1L6 7.1l3.8-4.3A.8.8 0 0 1 11 3.8z"></path>
-        </svg>
-      </button>
-      <div class="menu-panel" role="menu" hidden>
-        <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">macOS <span>Apple silicon</span></a>
-        <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">macOS <span>Intel</span></a>
-        <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">Windows <span>x64</span></a>
-        <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">Linux <span>AppImage</span></a>
-      </div>
-    </div>
+    <a class="chrome-download buzz-pill" href="#pricing">Get Stick</a>
   </div>
 
-  <a class="chrome-builtby" href="https://www.block.xyz" target="_blank" rel="noreferrer" aria-label="Built by Block">
-    <span>Built by</span>
-    <span class="block-mark" aria-hidden="true"></span>
-  </a>
+  <a class="chrome-builtby" href="#how-it-works"><span>How it works</span></a>
 
   <main class="buzz-site">
-    <!-- hero wordmark fuzz filter -->
     <svg width="0" height="0" aria-hidden="true" focusable="false" class="filter-defs">
-      <title>Buzz wordmark texture filter</title>
+      <title>Stick wordmark texture filter</title>
       <defs>
         <filter id="buzz-fuzz-hero" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
           <feGaussianBlur in="SourceGraphic" stdDeviation="9.6" result="softLogo"></feGaussianBlur>
@@ -103,17 +83,17 @@
 
       <div class="hero-inner">
         <div class="hero-wordmark-group">
-          <h1 class="hero-wordmark" data-fuzz>stick</h1>
+          <div class="hero-wordmark" data-fuzz>stick</div>
         </div>
         <div class="hero-copy" data-reveal>
-          <p>
-            <span class="nowrap">Where people and agents work together.</span>
-            <span class="nowrap">Come test the early stages with us.</span>
-          </p>
+          <h1>Put the off switch<br>in another room.</h1>
+          <p class="hero-sub">A USB key that blocks the sites and apps you choose, on Mac and Windows. Ending a session means physically going to get it.</p>
+          <a class="buzz-pill hero-cta" href="#pricing">Get Stick</a>
+          <p class="hero-fine">$39.99 plus shipping, one time. No subscription. Pre-order. Shipping Q4 2026, with a limited first batch in September 2026.</p>
         </div>
       </div>
 
-      <button type="button" class="hero-scroll-cue" aria-label="Scroll to learn more" data-scroll-to="#demo">
+      <button type="button" class="hero-scroll-cue" aria-label="Scroll to learn more" data-scroll-to="#how-it-works">
         <span>
           <svg viewBox="0 0 21.0389 28.4804" fill="none" aria-hidden="true" focusable="false">
             <title>Scroll down</title>
@@ -128,43 +108,47 @@
 
     <div class="section-spacer" aria-hidden="true"></div>
 
-    <!-- DEMO / VIDEO -->
-    <section id="demo" data-bg-section="video" class="video-section">
-      <h2 class="video-heading" data-reveal>A new native workspace<br>for human + agent teams</h2>
-      <p class="video-sub" data-reveal>Chat with teammates and specialized agents in one shared space, then move straight into planning, project management, coding, and PRs. Create agents tailored to your workflows, let them collaborate with your team's agents, and keep the work that used to be scattered across chat, trackers, and dev tools in one place.</p>
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" data-bg-section="how" class="band how-section">
+      <h2 class="band-heading" data-reveal>How it works</h2>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step-num">1</span>
+          <h3>Choose what to block.</h3>
+          <p>Sites, apps, and bundled category lists. Save them as modes: Deep Work, Sleep, whatever you need. Up to ten.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step-num">2</span>
+          <h3>Keep the key somewhere else.</h3>
+          <p>A drawer, another room, your bag. You never need it to start a session, only to end one, so it can live away from your desk permanently.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step-num">3</span>
+          <h3>Start a session.</h3>
+          <p>From the menu bar, or on a schedule. The block goes up immediately and holds through quitting and restarting. The only way to end it is to walk over and plug the key back in.</p>
+        </li>
+      </ol>
 
       <div class="video-frame" data-reveal>
         <div class="video-shell">
           <div class="video-sheen"></div>
           <div class="video-screen-wrap">
             <div class="video-screen">
-              <div class="app-mock" aria-hidden="true">
-                <aside class="app-rail">
-                  <div class="app-rail-logo"></div>
-                  <span class="app-rail-dot is-active"></span>
-                  <span class="app-rail-dot"></span>
-                  <span class="app-rail-dot"></span>
-                </aside>
-                <aside class="app-side">
-                  <div class="app-side-title">buzz / core</div>
-                  <div class="app-chan is-active"># room</div>
-                  <div class="app-chan"># planning</div>
-                  <div class="app-chan"># reviews</div>
-                  <div class="app-side-title app-side-title-2">Agents</div>
-                  <div class="app-agent"><i class="dot dot-lime"></i>fizz</div>
-                  <div class="app-agent"><i class="dot dot-blue"></i>honey</div>
-                  <div class="app-agent"><i class="dot dot-yellow"></i>bumble</div>
-                </aside>
-                <div class="app-main">
-                  <div class="app-topbar"><span class="app-topbar-title"># room</span><span class="app-topbar-meta">4 people · 3 agents</span></div>
-                  <div class="app-thread" data-thread>
-                    <div class="app-msg" data-step="1"><i class="av av-person"></i><div><b>noah</b><p>ship the plan for the agent handoff?</p></div></div>
-                    <div class="app-msg" data-step="2"><i class="av av-lime"></i><div><b>fizz <s>agent</s></b><p>Drafted 3 steps. Assigning review to honey.</p></div></div>
-                    <div class="app-msg" data-step="3"><i class="av av-blue"></i><div><b>honey <s>agent</s></b><p>Reviewed. Opened PR #42 with the migration.</p></div></div>
-                    <div class="app-msg app-msg-pr" data-step="4"><div class="pr-card"><span class="pr-dot"></span>PR #42 · agent handoff · <s>ready</s></div></div>
-                    <div class="app-msg" data-step="5"><i class="av av-person av-person-2"></i><div><b>sam</b><p>merging — nice work 🐝</p></div></div>
-                  </div>
-                  <div class="app-composer"><span class="app-composer-text">Message #room</span><span class="app-caret"></span></div>
+              <div class="session-mock" aria-hidden="true">
+                <div class="session-bar">
+                  <span class="session-chip">Deep Work</span>
+                  <span class="session-state"><i class="session-dot"></i>Session running</span>
+                </div>
+                <div class="session-body" data-sequence>
+                  <p class="session-lead">Blocked until the key comes back</p>
+                  <ul class="session-list">
+                    <li class="seq-item" data-step="1">news.example.com</li>
+                    <li class="seq-item" data-step="2">Social apps <s>12 sites</s></li>
+                    <li class="seq-item" data-step="3">Explicit content <s>category</s></li>
+                    <li class="seq-item" data-step="4">Gambling <s>category</s></li>
+                  </ul>
+                  <p class="seq-item session-foot" data-step="5">Ends when you plug in Stick.</p>
                 </div>
               </div>
             </div>
@@ -175,62 +159,190 @@
 
     <div class="section-spacer" aria-hidden="true"></div>
 
-    <!-- FEATURES -->
-    <section data-bg-section="features" class="features-section">
-      <h2 class="features-heading" data-reveal>Your people, your agents, your project — all in one&nbsp;place.</h2>
-      <div class="features-spacer"></div>
-      <div class="features-track">
-        <article class="feature-card" data-reveal>
-          <div class="feature-card-figure" data-avatar="fizz"></div>
+    <!-- COMPARISON -->
+    <section id="comparison" data-bg-section="compare" class="band compare-section">
+      <h2 class="band-heading" data-reveal>Every other blocker keeps the key on the same machine.</h2>
+
+      <div class="features-track compare-track">
+        <article class="feature-card compare-card" data-reveal>
           <div class="feature-card-text">
-            <h3>Communicate with your&nbsp;team</h3>
-            <p>Keep people, context, decisions, and next steps in one shared room — no more chasing threads, docs, and status updates.</p>
+            <h3>Screen Time</h3>
+            <p class="compare-where">On the machine you are trying to leave.</p>
+            <p>The passcode is one you chose, and you can reset it from that same Mac.</p>
           </div>
         </article>
-        <article class="feature-card" data-reveal>
-          <div class="feature-card-figure" data-avatar="honey"></div>
+        <article class="feature-card compare-card" data-reveal>
           <div class="feature-card-text">
-            <h3>Bring in your agents</h3>
-            <p>Invite specialized agents into the conversation so they can compare notes, divide work, and build on the same context as your team.</p>
+            <h3>Other blocking apps</h3>
+            <p class="compare-where">On the machine you are trying to leave.</p>
+            <p>Some are genuinely hard to cancel once a session has started, and that part is real. But the key is still software, running in front of you, and the screen is very good at this.</p>
           </div>
         </article>
-        <article class="feature-card" data-reveal>
-          <div class="feature-card-figure" data-avatar="bumble"></div>
+        <article class="feature-card compare-card" data-reveal>
           <div class="feature-card-text">
-            <h3>Manage your git projects</h3>
-            <p>Turn the discussion into plans, code, reviews, and PRs without hopping between your tracker, chat app, and dev tools.</p>
+            <h3>Deleting the app</h3>
+            <p class="compare-where">On the machine you are trying to leave.</p>
+            <p>Under a minute to reinstall.</p>
           </div>
         </article>
+        <article class="feature-card compare-card is-stick" data-reveal>
+          <div class="feature-card-text">
+            <h3>Stick</h3>
+            <p class="compare-where">Physical friction.</p>
+            <p>Accessing distractions means getting up and grabbing the physical key from wherever you left it. A drawer, another room, your bag.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="band-kicker" data-reveal>The difference isn’t strength. It’s distance.</p>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- PRICING -->
+    <section id="pricing" data-bg-section="pricing" class="band pricing-section">
+      <div class="pricing-card" data-reveal>
+        <p class="pricing-price">$39.99 <span>plus shipping.</span></p>
+        <ul class="pricing-list">
+          <li>The key: USB-C, in hot pink or gray, Stick. embossed</li>
+          <li>The Mac and Windows apps, with free updates</li>
+          <li>One key works on every Mac and PC you own</li>
+          <li>No subscription</li>
+          <li>Ships worldwide. Shipping is charged at checkout and depends on where you are. Duties and import taxes, where your country charges them, are yours too</li>
+        </ul>
+        <a class="buzz-pill pricing-cta" href="https://www.getstick.website/buy" target="_blank" rel="noreferrer">Get Stick</a>
+        <p class="pricing-note">Pre-order. Charged today, ships Q4 2026. A limited first batch goes out in September 2026.</p>
+        <p class="pricing-note">Cancel before it ships, or 30 days from delivery. See <a href="pages/refunds.html">refunds</a>.</p>
       </div>
     </section>
 
     <div class="section-spacer" aria-hidden="true"></div>
 
-    <!-- CTA -->
-    <section data-bg-section="cta" class="cta-section" aria-labelledby="cta-heading">
-      <div class="cta-bees" data-bee-field="cta" aria-hidden="true"></div>
-      <div class="cta-inner">
-        <div class="cta-block" data-reveal>
-          <h2 id="cta-heading">Want Buzz for your team?</h2>
-          <form class="cta-form" novalidate>
-            <div class="cta-fields">
-              <p class="cta-copy">Try the open source app today, or join the waitlist for an enterprise version built for company-wide access, support, and agent management.</p>
-              <input class="cta-input" type="email" placeholder="Enter email" aria-label="Email address" autocomplete="email" name="email">
-              <input class="cta-input" type="text" placeholder="Name" aria-label="Name" autocomplete="name" name="name">
-              <input class="cta-input" type="text" placeholder="Company" aria-label="Company" autocomplete="organization" name="company">
-              <button type="submit" class="buzz-pill cta-submit">Next</button>
-              <p class="cta-status" role="status" aria-live="polite"></p>
-            </div>
-          </form>
+    <!-- MODES -->
+    <section id="modes" data-bg-section="modes" class="band modes-section">
+      <h2 class="band-heading" data-reveal>Modes</h2>
+      <p class="band-sub" data-reveal>Each mode is a named set of sites, apps and categories. Switch between them, or let a schedule start one for you.</p>
+      <ul class="mode-chips" data-reveal>
+        <li>Deep Work</li>
+        <li>Sleep</li>
+        <li>Study</li>
+        <li>Evenings</li>
+        <li>Writing</li>
+        <li>Weekends off</li>
+      </ul>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- DETAILS -->
+    <section id="details" data-bg-section="details" class="band details-section">
+      <h2 class="band-heading" data-reveal>The details we think you’ll care about</h2>
+      <div class="details-grid">
+        <div class="detail" data-reveal>
+          <h3>A schedule can start a session, but never end one.</h3>
+          <p>Sleep mode can switch on at 22:00 on weeknights without you deciding to switch it on. There is no matching end time, because that would be a second way out that does not need the key.</p>
+        </div>
+        <div class="detail" data-reveal>
+          <h3>You cannot weaken it mid-session.</h3>
+          <p>Once a session is running, the settings are locked too. No quietly removing a site from the list to get around your own block.</p>
+        </div>
+        <div class="detail" data-reveal>
+          <h3>Blocking happens in three places at once.</h3>
+          <p>Sites are blocked at two different levels of your system, and blocked apps are closed if you open them. Any one of those on its own would leak.</p>
+        </div>
+        <div class="detail" data-reveal>
+          <h3>The usual workarounds are already closed.</h3>
+          <p>The tricks people reach for first, private DNS, hidden browser settings, proxy and VPN services, are shut off while a session runs, along with about 17,500 sites that exist purely to get around blockers.</p>
+        </div>
+        <div class="detail" data-reveal>
+          <h3>Browser settings stay changed after a restart.</h3>
+          <p>Browsers only read their settings when they open, so a change that lasted only as long as the session would be useless five seconds after you quit Chrome.</p>
+        </div>
+        <div class="detail" data-reveal>
+          <h3>The app cannot let itself out.</h3>
+          <p>The window you click on has no power to unlock anything. It can only ask, and be refused. There is no prompt you can talk yourself into approving.</p>
         </div>
       </div>
     </section>
 
     <div class="section-spacer" aria-hidden="true"></div>
 
+    <!-- LOST KEY -->
+    <section id="lost-key" data-bg-section="key" class="band key-section">
+      <h2 class="band-heading" data-reveal>If you lose your key</h2>
+      <p class="band-sub" data-reveal>Two answers, and we’d rather you know both before you buy than after.</p>
+      <div class="key-grid">
+        <div class="key-card" data-reveal>
+          <h3>Five emergency unlocks</h3>
+          <p>Every Mac gets five, for the times you really need out and the key is three hours away. They end a session without it. They do not refill. Five is what you get, so spend them like it.</p>
+        </div>
+        <div class="key-card" data-reveal>
+          <h3>After that, contact us</h3>
+          <p>Write to us, a real person on the other end, and we’ll unlock your machine manually, within one business day. Not instantly, on purpose: an unlock we granted in five minutes would just be the button this whole product exists to remove.</p>
+        </div>
+      </div>
+      <p class="band-kicker" data-reveal>We’d rather you knew both before you buy than discover them afterwards.</p>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- PLATFORMS -->
+    <section id="platforms" data-bg-section="platforms" class="band platforms-section">
+      <h2 class="band-heading" data-reveal>Mac and Windows, one key</h2>
+      <div class="platforms-copy">
+        <p data-reveal>The key is the same physical object on both, so the Stick that locks your Mac unlocks your PC. Set up each machine once and the key is adopted rather than replaced — a laptop for work and a desktop at home can share one.</p>
+        <p data-reveal>Blocking works the same way on each: sites stopped at two levels of the system, blocked apps closed when you open them, and settings that cannot be weakened while a session is running. Both apps come with your order at no extra cost, and there is nothing to buy twice.</p>
+        <p class="platforms-req" data-reveal>macOS 13 Ventura or later, on Apple Silicon or Intel. Windows 10 or 11, on Intel, AMD or ARM. Nothing older, on either side.</p>
+      </div>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- QUESTIONS -->
+    <section id="questions" data-bg-section="questions" class="band questions-section">
+      <h2 class="band-heading" data-reveal>Questions</h2>
+      <div class="faq" data-reveal>
+        <details>
+          <summary>How is this different from Screen Time or Freedom?</summary>
+          <p>Their key lives on the machine you’re trying to get away from. Ours is an object you can put in another room. Some of those apps are legitimately hard to cancel mid-session, and we’re not claiming otherwise. We’re claiming distance beats difficulty.</p>
+        </details>
+        <details>
+          <summary>Can’t I just get around it?</summary>
+          <p>Yes, if you’re determined and technical. It’s your computer and you have administrator rights on it. Stick is built to beat the impulse, not you with a terminal open and an afternoon free. What it removes is the easy exit: no timer to wait out, no button that ends a session early, and no password you can talk yourself into typing. The way back in is a walk to wherever you left the key.</p>
+        </details>
+        <details>
+          <summary>Do I need the key to start a session?</summary>
+          <p>No. Start one from the menu bar, or let a schedule do it. The key is only how you get out.</p>
+        </details>
+        <details>
+          <summary>What can I block?</summary>
+          <p>Any website and any app, individually. Plus two bundled category lists, Explicit content and Gambling, which are tens of thousands of domains each. There deliberately isn’t a “social media” category: the site picker lets you choose the individual sites, which is finer-grained and more honest than one switch over a list you can’t inspect.</p>
+        </details>
+        <details>
+          <summary>Does the block survive a restart?</summary>
+          <p>Yes. The blocking service runs at boot and is set to restart if it stops, the blocked-hosts region is restored within two seconds of any hand edit, and browser policy is written persistently rather than per-session. Restarting, logging out, quitting the app or killing the process all leave the block in place. What ends it is the key, or one of the five emergency unlocks.</p>
+        </details>
+        <details>
+          <summary>What happens if I lose the key?</summary>
+          <p>Five emergency unlocks per machine. It’s a lifetime allowance and they don’t refill. After that, write to us and we’ll unlock it manually.</p>
+        </details>
+        <details>
+          <summary>What does Stick install?</summary>
+          <p>A small program that runs in the background, plus the app window you use. The background program needs the highest level of access on your machine, because that is what keeps a block in place after a restart instead of letting it disappear the moment you quit the app. It is signed either way — checked by Apple on a Mac, and code-signed on Windows — so your computer can confirm it came from us and has not been tampered with, and the installer comes on the key itself. The window you click on has no power to unlock anything by itself: it can only ask the background program, and be refused.</p>
+        </details>
+        <details>
+          <summary>Do you see what I block?</summary>
+          <p>No. Nothing in Stick sends anything to us: no account, no check to see whether you paid, no record of how you use it. Your modes, your blocked lists and your session history stay on your machine. It does download two lists from GitHub, and neither carries anything about you: the sites for a category when you switch one on, and a weekly refresh of the list of sites people use to get around blockers. If you would rather check than take our word for it, any network monitor will show you exactly that.</p>
+        </details>
+      </div>
+      <p class="faq-all" data-reveal><a href="pages/faq.html">All questions →</a></p>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
     <!-- FOOTER -->
     <div class="footer-wrap">
-      <footer id="download" data-bg-section="footer" class="site-footer">
+      <footer id="get" data-bg-section="footer" class="site-footer">
         <svg width="0" height="0" aria-hidden="true" focusable="false" class="filter-defs">
           <defs>
             <filter id="buzz-fuzz-footer" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
@@ -278,21 +390,9 @@
 
         <div class="footer-content" data-reveal>
           <p class="footer-type" aria-live="off"><span data-typewriter></span><span class="type-caret" aria-hidden="true">|</span></p>
+          <p class="footer-fine">$39.99 plus shipping, one time. Ships Q4 2026.</p>
           <div class="footer-actions">
-            <div class="menu-wrap">
-              <button type="button" class="buzz-pill footer-pill" aria-haspopup="menu" aria-expanded="false" data-menu-trigger>
-                Get the app
-                <svg class="menu-chevron" viewBox="0 0 12 12" width="9" height="9" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M6 9.4 1 3.8a.8.8 0 0 1 1.2-1L6 7.1l3.8-4.3A.8.8 0 0 1 11 3.8z"></path>
-                </svg>
-              </button>
-              <div class="menu-panel menu-panel-up" role="menu" hidden>
-                <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">macOS <span>Apple silicon</span></a>
-                <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">macOS <span>Intel</span></a>
-                <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">Windows <span>x64</span></a>
-                <a role="menuitem" href="https://github.com/block/buzz/releases/latest" target="_blank" rel="noreferrer">Linux <span>AppImage</span></a>
-              </div>
-            </div>
+            <a class="buzz-pill footer-pill" href="https://www.getstick.website/buy" target="_blank" rel="noreferrer">Get Stick</a>
             <a class="buzz-pill footer-pill footer-pill-social" href="https://www.instagram.com/stick.ig/" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true" focusable="false">
                 <rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="2"></rect>
@@ -303,21 +403,16 @@
             </a>
           </div>
         </div>
-
-        <p class="footer-open-source-note">Buzz is an open source project</p>
       </footer>
 
       <div class="legal-footer-wrap">
         <footer class="legal-footer">
-          <a class="chrome-builtby footer-mobile-only" href="https://www.block.xyz" target="_blank" rel="noreferrer" aria-label="Built by Block">
-            <span>Built by</span><span class="block-mark" aria-hidden="true"></span>
-          </a>
-          <p class="footer-mobile-only footer-open-source-mobile">Buzz is an open source project</p>
           <div class="legal-links-row">
-            <span class="legal-links-item"><a href="pages/support.html" class="legal-link">Support</a></span>
-            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/terms-of-service.html" class="legal-link">Terms of Service</a></span>
-            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/privacy-policy.html" class="legal-link">Privacy Policy</a></span>
-            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/community-guidelines.html" class="legal-link">Community Guidelines</a></span>
+            <span class="legal-links-item"><a href="pages/faq.html" class="legal-link">FAQ</a></span>
+            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/refunds.html" class="legal-link">Refunds</a></span>
+            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/terms.html" class="legal-link">Terms of sale</a></span>
+            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/privacy.html" class="legal-link">Privacy</a></span>
+            <span class="legal-links-item"><span aria-hidden="true" class="legal-link-sep">|</span><a href="pages/contact.html" class="legal-link">Contact</a></span>
           </div>
         </footer>
       </div>
