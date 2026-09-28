@@ -982,7 +982,7 @@ html.cursor-none input { cursor: none; }
   text-decoration: none;
   letter-spacing: -0.02em;
 }
-.footer-pill-gh { gap: 8px; padding: 11px 18px 11px 15px; }
+.footer-pill-social { gap: 8px; padding: 11px 18px 11px 15px; }
 
 .footer-open-source-note {
   position: absolute;
