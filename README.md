@@ -23,6 +23,7 @@ assets/styles.css   all styling
 assets/app.js       bees, scroll-driven background, reveals, typewriter
 assets/icon.svg     favicon
 assets/how/         step media: two WebP stills, the step 3 MP4 and its poster
+assets/stick-key.webp  the pink key cutout beside the pricing card
 pages/              faq / refunds / terms / privacy / contact
 ```
 

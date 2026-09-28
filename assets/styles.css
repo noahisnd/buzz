@@ -847,7 +847,23 @@ html.cursor-none input { cursor: none; }
    Pricing
    -------------------------------------------------------------------------- */
 
-.pricing-section { max-width: 720px; }
+.pricing-section { max-width: 1180px; }
+/* the key sits beside the card, as on getstick.website; stacks on narrow screens */
+.pricing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+.pricing-key {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .pricing-layout { grid-template-columns: minmax(0, 1fr); }
+  .pricing-key { width: min(100%, 440px); margin: 0 auto; }
+}
 .pricing-card {
   border-radius: 20px;
   background: var(--buzz-ink);
