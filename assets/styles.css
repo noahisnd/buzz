@@ -97,7 +97,6 @@ img, video { cursor: var(--cursor-arrow); }
 .nowrap { white-space: nowrap; }
 .filter-defs { position: absolute; pointer-events: none; }
 
-.section-spacer { height: 12vh; }
 
 .buzz-site {
   position: relative;
@@ -249,9 +248,9 @@ img, video { cursor: var(--cursor-arrow); }
 
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 136px 0 80px;
 }
 
 .hero-inner {
@@ -261,7 +260,6 @@ img, video { cursor: var(--cursor-arrow); }
   width: 100%;
   padding: 0;
   position: relative;
-  margin-top: -3.5vh;
   z-index: 3;
 }
 
@@ -408,7 +406,7 @@ img, video { cursor: var(--cursor-arrow); }
 
 .site-footer {
   position: relative;
-  min-height: 100vh;
+  min-height: clamp(520px, 72vh, 760px);
   display: grid;
   place-items: center;
   background: transparent;
@@ -570,7 +568,6 @@ img, video { cursor: var(--cursor-arrow); }
 }
 
 @media (max-width: 760px) {
-  .section-spacer { height: 8vh; }
   .chrome-builtby:not(.footer-mobile-only) { display: none; }
   .footer-open-source-note { display: none; }
   .footer-mobile-only { display: flex; justify-content: center; }
@@ -580,7 +577,7 @@ img, video { cursor: var(--cursor-arrow); }
   .features-heading { --features-heading-margin: 14vh auto 0; }
   .footer-wordmark-static { display: none; }
   .footer-wordmark-marquee { display: flex; }
-  .hero-scroll-cue { bottom: 56px; }
+  .site-footer { min-height: 460px; }
 }
 
 @media (max-width: 420px) {
@@ -712,7 +709,7 @@ img, video { cursor: var(--cursor-arrow); }
 
 .band {
   position: relative;
-  padding: 12vh 6vw;
+  padding: 80px 6vw;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -1018,7 +1015,12 @@ img, video { cursor: var(--cursor-arrow); }
 }
 
 @media (max-width: 760px) {
-  .band { padding: 9vh 6vw; }
   .compare-card { width: 78vw; }
   .chrome-builtby { display: none; }
+}
+
+/* section rhythm matches getstick.website: 80px on phones, 112px from 768px */
+@media (min-width: 768px) {
+  .band { padding-top: 112px; padding-bottom: 112px; }
+  .hero { padding: 168px 0 112px; }
 }
